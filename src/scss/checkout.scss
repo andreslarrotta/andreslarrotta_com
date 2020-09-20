@@ -1,0 +1,140 @@
+/*
+This boilerplate is based in ITCSS and SMACSS
+*/
+@import "framework/fundation";
+// Config
+@import "config/functions";
+@import "config/variables";
+@import "config/mixins";
+@import "theme/typography";
+@import "components/checkout/empty-cart";
+@import "components/checkout/checkout-cart";
+
+.checkout {
+    &__header {
+        height: 55px;
+        background-color: $background-light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint(medium) {
+            box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.09);
+        }
+    }
+    &__footer {
+        &__container {
+            width: calc(100% - 3rem);
+            height: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            display: block;
+            @include breakpoint(medium) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        &__top {
+            background-color: $grayLigth;
+            padding: 2rem 0;
+            @include breakpoint(medium) {
+                padding: 3rem 0;
+                height: 79px; 
+            }
+        }
+        &__bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            padding: 40px 0;
+            @include breakpoint(medium) {
+                padding: 0;
+            }
+        }
+        &__creators {
+            font-family: $bt_capitanejoregular;
+            color: $grayMedium;
+            text-align: center;  
+            margin-left: 1rem;
+            margin-right: 1rem;
+            white-space: pre-line;
+            font-size: 12px;
+            line-height: 1.5em;
+            @include breakpoint(medium) {
+                font-size: 16px;
+                white-space: initial;
+            }
+            & > a {
+                color: inherit;
+            }
+        }
+        &__tail {
+            height: 50px;
+            background-color: $bluep;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__payment {
+        // TODO: Implementar estilos de pago
+        display: block;
+        & > p {
+            text-align: center;
+            margin-bottom: 35px;
+            text-decoration: underline;
+            @include breakpoint(medium) {
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
+        &__link {
+            color: $black;
+            font-family: $bt_capitanejoregular;
+            font-size: 15px;
+            font-weight: 400;
+            &:hover {
+                color: $black;
+            }
+        }
+        &__list {
+            height: 0;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            @include breakpoint(medium) {
+                height: auto;
+            }
+        }
+    }
+    
+    &__schedule {
+        display: block;    
+        &__text {
+            text-align: center;
+            white-space: pre-line;
+            color: $black;
+            font-family: $bt_capitanejoregular;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 0;
+            @include breakpoint(medium) {
+                text-align: left;
+            }
+        } 
+    }
+}
+
+// Estilos generales del checkout - cuadrícula interna
+
+.body-cart {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    margin: 0;
+    padding: 0;
+}

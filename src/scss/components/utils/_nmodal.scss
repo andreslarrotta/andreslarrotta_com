@@ -1,0 +1,84 @@
+.Nmodal *,
+.Nmodal *::before,
+.Nmodal *::after {
+  box-sizing: border-box;
+}
+.body__Nmodal{
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+  }
+  .Nmodal{
+    &__container{
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      background:#e6e6e68a;
+      opacity: 0;
+      visibility: hidden;
+      cursor: pointer;
+      transition: transform .2s ease, -webkit-transform .2s ease;
+      overflow-y: scroll;
+      padding-top: 8vh;
+      
+    }
+    &__visible{
+      visibility: visible;
+      opacity: 1;
+    }
+    &__close{
+      position: absolute;
+      right: 0;
+    }
+    &__box{
+      position: relative;
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 95%;
+      border-radius: 4px;
+      background: #fff;
+      opacity: 1;
+      cursor: auto;
+      transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+      transform: scale(.8);
+      @include breakpoint(large){
+        width: 70%;
+        }
+    }
+    &__visible &__box{
+      transform: scale(1);
+    }
+    &__box-content{
+      padding: 1rem 1rem;
+        @include breakpoint(large){
+            padding: 3rem 3rem;
+        }
+    }
+    &__close{
+      font-size: 0;
+    width: 40px;
+    height: 40px;
+      &::after{
+            font-family: "mario-2020" !important;
+            content: "\6a";
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 20px;
+      }
+    }
+    
+  }

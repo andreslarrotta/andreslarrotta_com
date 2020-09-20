@@ -1,0 +1,23 @@
+.container{
+    @include xy-grid-container();
+    
+    @media print, screen and (max-width: 40em) and (orientation: landscape){
+        max-width: rem-calc(540);
+        
+        
+    }
+    
+    &.fluid {
+        @include xy-grid-container(100%);
+    }
+    
+    &.full {
+        @include xy-grid-container(100%, 0);
+    }
+    
+}
+
+
+.grid{
+    @include xy-grid();
+}

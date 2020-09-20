@@ -1,0 +1,132 @@
+.checkout {
+    &__cart {
+        &__title {
+            color: $black;
+            font-family: $bt_capitanejoregular, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: uppercase;
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+    }
+}
+.brand-name {
+    display: none !important;
+}
+.product-image {
+    width: 120px;
+    padding: 0 !important;
+    @media screen and (min-width:420px) {
+        width: 158px;
+    }
+}
+.product-name {
+    width: calc(100% - 158px) !important;
+    height: 194px !important;
+    margin-left: 158px !important;
+    margin-right: 0;
+    & > a {
+        padding-top: 30px;
+        color: $black;
+        font-family: $bt_capitanejoregular, sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+    } 
+}
+.product-item {
+    height: 204px;
+}
+.product-price {
+    width: calc(100% - 158px);
+    text-align: left !important;
+    margin-top: -115px;
+}
+tbody .quantity {
+    margin-left: 158px !important;
+    width: calc(100% - 188px) !important;
+    margin-top: -80px;
+    border: 1px solid black !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width:490px) {
+        margin-top: 0;
+        border: none !important;
+        padding: 92px 0 !important;
+        width: auto !important;
+        margin-left: 0 !important;
+    }
+    &::before {
+        content: 'Cant';
+        color: $grayMedium;
+        font-family: $bt_capitanejoregular, sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 10px;
+        @media screen and (min-width:420px) {
+            content: 'Cantidad ';
+        }
+        @media screen and (min-width:490px) {
+            content: '';
+        }
+    }
+    & input {
+        border: none !important;
+        box-shadow: none !important;
+        color: $black;
+        font-family: $bt_capitanejoregular, sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+    }
+}
+.new-product-price {
+    color: $black;
+    font-family: $bt_capitanejoregular, sans-serif !important;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.seller.muted > span {
+    display: none !important;
+    padding-top: 30px !important;
+}
+[class*="icon-"] {
+    color: transparent;
+    position: relative;
+    width: 13px;
+    height: 13px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-quantity-change {
+    width: 13px;
+    height: 13px;
+}
+.icon-minus-sign, .icon-plus-sign {
+    &::before {
+        position: absolute;
+        content: "";
+        background-color: black;
+        width: 13px;
+        height: 1px;
+        top: 3px;
+        left: -6px;
+    }
+}
+
+.icon-plus-sign {
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: black;
+        width: 1px;
+        height: 13px;
+        left: 0;
+        bottom: -10px;
+    }
+}

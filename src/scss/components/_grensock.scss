@@ -1,0 +1,294 @@
+.greensock {
+  background: #f8f8f8;
+  .principios {
+    &_container {
+      @include xy-grid;
+      @include xy-grid-container;
+      &_title {
+        text-align: center;
+        width: 100%;
+        h1 {
+          padding: 0 20%;
+        }
+      }
+      .principio {
+        width: 100%;
+        @include xy-cell(12);
+        @include xy-grid;
+        @include xy-grid-container;
+        margin-bottom: 100px;
+        &_title {
+          width: 100%;
+        }
+        .fas {
+          text-align: center;
+          width: 100%;
+          font-size: 2.6rem;
+          margin-bottom: 50px;
+        }
+        .wrong {
+          @include xy-cell(6);
+          .fas {
+            color: red;
+          }
+        }
+        .good {
+          @include xy-cell(6);
+          .fas {
+            color: green;
+          }
+        }
+        .container {
+          .square {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            border-radius: 17px;
+          }
+        }
+        &.offset {
+          .wrong {
+            .square {
+              padding: 26px 0;
+              display: inline-block;
+              &:hover {
+                border: 1px solid orange;
+                background: white;
+                border-radius: 17px;
+                cursor: pointer;
+
+                & ~ .square_content {
+                  display: inline-flex;
+                  .item {
+                    opacity: 1 !important;
+                  }
+                }
+              }
+              &_content {
+                display: none;
+                &:hover {
+                  display: inline-flex;
+                  .item {
+                    opacity: 1 !important;
+                  }
+                }
+                .item {
+                  background: #00bcd4;
+                  height: 58px;
+                  padding: 1px 26px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 10px;
+                  font-size: 1.3rem;
+                  margin-right: 7px;
+                }
+              }
+              .fas {
+                color: black;
+              }
+            }
+          }
+          .good {
+            .square {
+              padding: 26px 0;
+              display: inline-block;
+              margin-right: 8px;
+              transition: all 0.5s;
+              &.active {
+                border: 1px solid orange;
+                background: white;
+              }
+              &:hover {
+                border: 1px solid orange;
+                background: white;
+                border-radius: 17px;
+                cursor: pointer;
+              }
+              &_content {
+                display: inline-flex;
+                .item {
+                  opacity: 0;
+                  background: #00bcd4;
+                  height: 58px;
+                  padding: 1px 26px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 10px;
+                  font-size: 1.3rem;
+                  margin-right: 7px;
+                }
+              }
+              .fas {
+                color: black;
+              }
+            }
+          }
+        }
+        &.masking {
+          .wrong {
+            .square {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.5s;
+              .text {
+                opacity: 0;
+              }
+              &:hover {
+                width: 100%;
+                .text {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          .good {
+            .square {
+              padding: 15px;
+              position: relative;
+
+              .fa-plus {
+                color: black;
+                margin-top: 11px;
+                transition: all 0.5s;
+              }
+              &.active {
+                .fa-plus {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 61px;
+                  &:before {
+                    content: "\f068";
+                  }
+                }
+                .text {
+                  opacity: 1;
+                  border: none !important;
+                  text-align: center;
+                }
+              }
+              .text {
+                opacity: 0;
+                transition: all 0.5s;
+              }
+              .button {
+                display: block;
+                width: 100px;
+                height: 24px;
+                background: black;
+                margin: 0 auto;
+                border-radius: 15px;
+                color: white;
+                text-transform: capitalize;
+                text-decoration: none;
+                margin-top: 12px;
+
+                i {
+                  width: 20px;
+                  font-size: 1rem;
+                  color: white;
+                  opacity: 1 !important;
+                }
+              }
+            }
+          }
+        }
+        &.parenting {
+          .good {
+            .square {
+              transform: scale(0.5);
+            }
+            hr {
+              background: red;
+              height: 14px;
+              width: 0%;
+              position: relative;
+              left: 0;
+              margin: 0;
+              margin-top: 20px;
+            }
+          }
+        }
+        &.overlay {
+          img {
+            margin: 0 auto;
+          }
+        }
+        &.transformation {
+          .wrong,
+          .good {
+            margin-bottom: 110px;
+            margin-top: 21px;
+          }
+          .square {
+            margin: 0 auto;
+          }
+        }
+        &.obscuration {
+          .wrong {
+            .settings {
+              display: none;
+            }
+          }
+          .good {
+            .settings {
+              display: flex;
+              opacity: 0;
+            }
+          }
+          .settings {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 17px;
+            z-index: 1;
+            background: #000000ab;
+            align-items: center;
+            justify-content: center;
+            &.active {
+              display: flex;
+            }
+            ul {
+              padding: 0;
+              width: 100%;
+              li {
+                width: 100%;
+                list-style: none;
+                font-size: 2rem;
+                color: white;
+                text-transform: uppercase;
+                transition: all 0.5s;
+                &:hover {
+                  background: white;
+                  color: black;
+                }
+              }
+            }
+          }
+          .square {
+            width: 100%;
+            height: 500px;
+            border: 2px solid orange;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+
+            .fas {
+              position: absolute;
+              left: 0;
+              width: 50px;
+              color: black;
+              z-index: 2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
