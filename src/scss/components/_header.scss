@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
+
+header {
+  background: white;
+  box-shadow: 0 0 13px 0 grey;
+  
+  .header {
+    &_container {
+      @include xy-grid;
+      @include xy-grid-container;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          list-style: none;
+          width: 100px;
+          padding: 13px;
+          text-align: center;
+          a {
+            text-decoration: none;
+            color: black;
+            font-family: "Syne", sans-serif;
+          }
+        }
+      }
+    }
+  }
+}

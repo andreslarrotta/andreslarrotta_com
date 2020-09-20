@@ -1,0 +1,14 @@
+footer {
+  background: black;
+  .footer {
+    &_container {
+      @include xy-grid;
+      @include xy-grid-container;
+      .info_andres {
+        text-align: center;
+        color: white;
+        margin: 0 auto;
+      }
+    }
+  }
+}

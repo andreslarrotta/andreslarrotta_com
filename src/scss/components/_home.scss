@@ -1,0 +1,96 @@
+.home {
+  background: #fee700;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+    @include breakpoint(medium down) {
+      font-size: 2rem;
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 39px;
+    width: 60%;
+    margin: 0 auto;
+    @include breakpoint(medium down) {
+      font-size: 1.5rem;
+    }
+  }
+}
+.profile {
+  background: black;
+  padding: 50px 0 50px 0;
+
+  &_container {
+    @include xy-grid;
+    @include xy-grid-container;
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin: 0;
+      color: white;
+      width: 100%;
+    }
+    p {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 39px;
+      width: 100%;
+      margin: 0 auto;
+      color: white;
+      @include breakpoint(medium down) {
+        line-height: 24px;
+      }
+    }
+    .links {
+      width: 100%;
+      margin-top: 30px;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        @include xy-grid;
+        width: 100%;
+        li {
+          @include xy-cell(4);
+          list-style: none;
+          padding: 13px;
+          text-align: center;
+          background: white;
+          a {
+            text-decoration: none;
+            color: black;
+            font-family: "Syne", sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
+.proyects {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_container {
+    @include xy-grid;
+    @include xy-grid-container;
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin: 0;
+      color: black;
+      width: 100%;
+    }
+  }
+}
